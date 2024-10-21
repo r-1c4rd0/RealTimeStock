@@ -1,0 +1,5 @@
+package monitoramento.inventario.repository;
+
+public class ProdutoRepository {
+
+}
