@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  inventario-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"  # Mapeia a porta 8080 do container para a porta 8080 da máquina host
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/inventario  # URL de conexão com o PostgreSQL
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    depends_on:
+      - postgres  # Depende do serviço PostgreSQL
+
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"  # Mapeia a porta padrão do PostgreSQL
+    environment:
+      POSTGRES_DB: inventario
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data  # Persistência de dados
+
+volumes:
+  postgres-data:
