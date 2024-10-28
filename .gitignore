@@ -1,3 +1,6 @@
-/.inventario-service.metadata/
+.metadata/
 
-/.inventario-service.sonarlint/
+.sonarlint/
+
+inventario-service/.metadata/
+inventario-service/.sonarlint/

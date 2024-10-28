@@ -15,31 +15,18 @@ import monitoramento.inventario.service.ProdutoService;
 
 @RestController
 @RequestMapping("/produtos")
-public class ProdutoController {
-
-    private final ProdutoService produtoService;
-
-    public ProdutoController(ProdutoService produtoService) {
-        this.produtoService = produtoService;
-    }
+class ProdutoController(private val produtoService: ProdutoService) {
 
     @GetMapping
-    public List<ProdutoDto> listarTodos() {
-        return produtoService.listarTodos();
-    }
+    fun listarTodos(): List<ProdutoDto> = produtoService.listarTodos()
 
     @PostMapping
-    public ProdutoDto criarProduto(@RequestBody ProdutoDto produtoDto) {
-        return produtoService.criarProduto(produtoDto);
-    }
+    fun criarProduto(@RequestBody produtoDto: ProdutoDto): ProdutoDto = produtoService.criarProduto(produtoDto)
 
     @PutMapping("/{id}")
-    public ProdutoDto atualizarProduto(@PathVariable Long id, @RequestBody ProdutoDto produtoDto) {
-        return produtoService.atualizarProduto(id, produtoDto);
-    }
+    fun atualizarProduto(@PathVariable id: Long, @RequestBody produtoDto: ProdutoDto): ProdutoDto =
+            produtoService.atualizarProduto(id, produtoDto)
 
     @DeleteMapping("/{id}")
-    public void deletarProduto(@PathVariable Long id) {
-        produtoService.deletarProduto(id);
-    }
+    fun deletarProduto(@PathVariable id: Long) = produtoService.deletarProduto(id)
 }
