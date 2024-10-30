@@ -4,4 +4,6 @@ data class ProdutoDto(
     val sku: String,
     val preco: Double,
     val quantidadeEmEstoque: Int,
-    val categoriaNome: String)
+    val quantidadeMinimaEstoque: Int,
+    val categoriaNome: String
+)

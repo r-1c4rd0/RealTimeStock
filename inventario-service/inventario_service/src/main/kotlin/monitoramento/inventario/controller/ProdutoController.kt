@@ -1,5 +1,6 @@
 package monitoramento.inventario.controller;
 
+import ProdutoDto
 import java.util.List;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,7 +19,7 @@ import monitoramento.inventario.service.ProdutoService;
 class ProdutoController(private val produtoService: ProdutoService) {
 
     @GetMapping
-    fun listarTodos(): List<ProdutoDto> = produtoService.listarTodos()
+    fun listarTodos(): kotlin.collections.List<ProdutoDto> = produtoService.listarTodos()
 
     @PostMapping
     fun criarProduto(@RequestBody produtoDto: ProdutoDto): ProdutoDto = produtoService.criarProduto(produtoDto)

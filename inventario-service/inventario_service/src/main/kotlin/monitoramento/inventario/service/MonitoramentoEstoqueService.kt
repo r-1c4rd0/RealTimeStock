@@ -1,3 +1,8 @@
+import monitoramento.inventario.repository.ProdutoRepository
+import org.slf4j.LoggerFactory
+import org.springframework.scheduling.annotation.Scheduled
+import org.springframework.stereotype.Service
+
 @Service
 class MonitoramentoEstoqueService(private val produtoRepository: ProdutoRepository) {
 

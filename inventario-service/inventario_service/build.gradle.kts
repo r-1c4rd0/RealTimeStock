@@ -8,11 +8,6 @@ plugins {
 group = "com.monitoramento"
 version = "0.0.1-SNAPSHOT"
 
-java {
-	toolchain {
-		languageVersion = JavaLanguageVersion.of(17)
-	}
-}
 
 configurations {
 	compileOnly {
@@ -36,7 +31,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.amqp:spring-rabbit-stream")
-	runtimeOnly("org.postgresql:postgresql:42.3.0")
+	runtimeOnly("org.postgresql:postgresql:42.7.2")
 	compileOnly("org.projectlombok:lombok")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")
 	runtimeOnly("org.postgresql:postgresql")

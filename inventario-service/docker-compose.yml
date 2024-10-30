@@ -3,7 +3,7 @@ version: '3.8'
 services:
   inventario-service:
     build:
-      context: .
+      context: ./inventario_service
       dockerfile: Dockerfile
     ports:
       - "8080:8080"  # Mapeia a porta 8080 do container para a porta 8080 da máquina host
