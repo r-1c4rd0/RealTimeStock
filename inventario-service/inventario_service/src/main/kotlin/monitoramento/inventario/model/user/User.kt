@@ -8,23 +8,21 @@ import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
-enum class UserRole {
-    ADMIN,
-    USER
-}
+
 
 @Entity
-@Table(name = "Users")
+@Table(name = "aut_users")
 @Data
 @AllArgsConstructor
 @EqualsAndHashCode
 class User(
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     val id: String,
 
     val login: String,
 
-    val password: String,
+    private val password: String,
 
     @Enumerated(EnumType.STRING)
     val role: UserRole

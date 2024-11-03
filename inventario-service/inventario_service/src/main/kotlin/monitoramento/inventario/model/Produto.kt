@@ -14,7 +14,7 @@ data class Produto(
 
     var quantidadeMinimaEstoque: Int,
 
-    @ManyToOne
+    @ManyToOne(cascade = [CascadeType.ALL])
     @JoinColumn(name = "categoria_id")
     var categoria: Categoria
 )

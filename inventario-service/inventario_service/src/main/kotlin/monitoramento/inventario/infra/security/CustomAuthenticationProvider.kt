@@ -1,5 +1,5 @@
 
-package monitoramento.inventario.security
+package monitoramento.inventario.infra.security
 
 import org.springframework.security.authentication.AuthenticationProvider
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
