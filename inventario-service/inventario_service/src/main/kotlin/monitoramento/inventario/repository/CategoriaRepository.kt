@@ -1,6 +1,6 @@
 package monitoramento.inventario.repository
 
-import Categoria
+import monitoramento.inventario.model.Categoria
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.stereotype.Repository
 

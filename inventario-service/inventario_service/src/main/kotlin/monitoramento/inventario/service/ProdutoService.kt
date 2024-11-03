@@ -1,7 +1,7 @@
 package monitoramento.inventario.service;
 
-import Produto
 import ProdutoDto
+import monitoramento.inventario.model.Produto
 import monitoramento.inventario.repository.CategoriaRepository
 import monitoramento.inventario.repository.ProdutoRepository
 import org.springframework.stereotype.Service

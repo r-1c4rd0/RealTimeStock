@@ -24,6 +24,13 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - postgres-data:/var/lib/postgresql/data  # Persistência de dados
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"  # Mapeia a porta padrão do MongoDB
+    volumes:
+      - mongo-data:/data/db
 
 volumes:
   postgres-data:
+  mongo-data:

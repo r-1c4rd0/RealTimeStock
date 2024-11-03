@@ -1,3 +1,5 @@
+package monitoramento.inventario.model
+
 import jakarta.persistence.*
 
 @Entity(name= "Produto")
